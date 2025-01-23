@@ -24,7 +24,7 @@ public class MyChannelInitializer extends ChannelInitializer<SocketChannel> {
         // 基于最大长度
         // e.pipeline().addLast(new FixedLengthFrameDecoder(4));
         // 解码转String，注意调整自己的编码格式GBK、UTF-8
-        channel.pipeline().addLast(new StringDecoder(Charset.forName("GBK")));
+        channel.pipeline().addLast(new StringDecoder(Charset.forName("utf-8")));
         //在管道中添加我们自己的接收数据实现方法
         channel.pipeline().addLast(new MyServerHandler());
     }

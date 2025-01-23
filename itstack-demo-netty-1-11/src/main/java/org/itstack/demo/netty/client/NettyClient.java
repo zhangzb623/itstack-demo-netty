@@ -28,7 +28,7 @@ public class NettyClient {
             Channel ch = b.bind(7398).sync().channel();
             //向目标端口发送信息
             ch.writeAndFlush(new DatagramPacket(
-                    Unpooled.copiedBuffer("你好端口7397的bugstack虫洞栈，我是客户端小爱，你在吗！", Charset.forName("GBK")),
+                    Unpooled.copiedBuffer("你好端口7397的bugstack虫洞栈，我是客户端小爱，你在吗！", Charset.forName("utf-8")),
                     new InetSocketAddress("127.0.0.1", 7397))).sync();
             ch.closeFuture().await();
         } catch (Exception e) {

@@ -18,7 +18,7 @@ public class AioClient {
         Future<Void> future = socketChannel.connect(new InetSocketAddress("192.168.1.116", 7397));
         System.out.println("itstack-demo-netty aio client start done. {关注公众号：bugstack虫洞栈 | 欢迎关注&获取源码}");
         future.get();
-        socketChannel.read(ByteBuffer.allocate(1024), null, new AioClientHandler(socketChannel, Charset.forName("GBK")));
+        socketChannel.read(ByteBuffer.allocate(1024), null, new AioClientHandler(socketChannel, Charset.forName("utf-8")));
         Thread.sleep(100000);
     }
 

@@ -25,9 +25,9 @@ public class MyChannelInitializer extends ChannelInitializer<SocketChannel> {
         // 流量整形；writeLimit/readLimit{0 or a limit in bytes/s}
         channel.pipeline().addLast(new GlobalTrafficShapingHandler(channel.eventLoop().parent(), 10, 10));
         // 解码转String，注意调整自己的编码格式GBK、UTF-8
-        channel.pipeline().addLast(new StringDecoder(Charset.forName("GBK")));
+        channel.pipeline().addLast(new StringDecoder(Charset.forName("utf-8")));
         // 解码转String，注意调整自己的编码格式GBK、UTF-8
-        channel.pipeline().addLast(new StringEncoder(Charset.forName("GBK")));
+        channel.pipeline().addLast(new StringEncoder(Charset.forName("utf-8")));
         // 在管道中添加我们自己的接收数据实现方法
         channel.pipeline().addLast(new MyServerHandler());
 

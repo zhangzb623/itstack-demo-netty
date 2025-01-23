@@ -20,7 +20,7 @@ public class MyChannelInitializer extends ChannelInitializer<NioDatagramChannel>
     protected void initChannel(NioDatagramChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
         // 解码转String，注意调整自己的编码格式GBK、UTF-8
-        //pipeline.addLast("stringDecoder", new StringDecoder(Charset.forName("GBK")));
+        //pipeline.addLast("stringDecoder", new StringDecoder(Charset.forName("utf-8")));
         pipeline.addLast(group, new MyServerHandler());
     }
 

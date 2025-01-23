@@ -25,7 +25,7 @@ public class ApiTest {
         in.readBytes(1);
         ByteBuf byteBuf = in.readBytes(1);
 
-        System.out.println(byteBuf.toString(Charset.forName("GBK")));
+        System.out.println(byteBuf.toString(Charset.forName("utf-8")));
     }
 
     public void test_03() {
@@ -126,7 +126,7 @@ public class ApiTest {
         //越过02 03位
         ByteBuf copy = in.copy(1, size - 1);
         //转换
-        String msg = copy.toString(Charset.forName("GBK"));
+        String msg = copy.toString(Charset.forName("utf-8"));
         //填充
         out.add(msg);*/
     }

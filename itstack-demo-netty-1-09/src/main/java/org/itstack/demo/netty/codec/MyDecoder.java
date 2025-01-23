@@ -60,7 +60,7 @@ public class MyDecoder extends ByteToMessageDecoder {
 
         //长度域占4字节，读取int
         ByteBuf byteBuf = in.readBytes(1);
-        String msgLengthStr = byteBuf.toString(Charset.forName("GBK"));
+        String msgLengthStr = byteBuf.toString(Charset.forName("utf-8"));
         int msgLength = Integer.parseInt(msgLengthStr);
 
         //剩余长度不足可读取数量[没有结尾标识]
@@ -79,6 +79,6 @@ public class MyDecoder extends ByteToMessageDecoder {
             return;
         }
 
-        out.add(msgContent.toString(Charset.forName("GBK")));
+        out.add(msgContent.toString(Charset.forName("utf-8")));
     }
 }

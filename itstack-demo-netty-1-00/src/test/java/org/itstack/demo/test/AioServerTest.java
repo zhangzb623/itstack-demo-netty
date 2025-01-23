@@ -76,7 +76,7 @@ public class AioServerTest {
                         return;
                     }
                     buffer.flip();
-                    System.out.println("received message:" + Charset.forName("GBK").decode(buffer));
+                    System.out.println("received message:" + Charset.forName("utf-8").decode(buffer));
                     buffer.clear();
                     channel.read(buffer, timeout, TimeUnit.SECONDS, null, this);
                 }

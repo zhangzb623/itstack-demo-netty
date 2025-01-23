@@ -30,7 +30,7 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
         //通知客户端链接建立成功
         String str = "通知客户端链接建立成功" + " " + new Date() + " " + channel.localAddress().getHostString() + "\r\n";
         ByteBuf buf = Unpooled.buffer(str.getBytes().length);
-        buf.writeBytes(str.getBytes("GBK"));
+        buf.writeBytes(str.getBytes("utf-8"));
         ctx.writeAndFlush(buf);
     }
 
@@ -49,7 +49,7 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
         //通知客户端链消息发送成功
         String str = "服务端收到：" + new Date() + " " + msg + "\r\n";
         ByteBuf buf = Unpooled.buffer(str.getBytes().length);
-        buf.writeBytes(str.getBytes("GBK"));
+        buf.writeBytes(str.getBytes("utf-8"));
         ctx.writeAndFlush(buf);
     }
 

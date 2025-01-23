@@ -26,7 +26,7 @@ public class NioClient {
             socketChannel.register(selector, SelectionKey.OP_CONNECT);
         }
         System.out.println("itstack-demo-netty nio client start done. {关注公众号：bugstack虫洞栈 | 欢迎关注&获取源码}");
-        new NioClientHandler(selector, Charset.forName("GBK")).start();
+        new NioClientHandler(selector, Charset.forName("utf-8")).start();
     }
 
 }
